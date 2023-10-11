@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <script type="text/javascript" src="/js/script.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
     <meta charset="UTF-8">
-    <link rel = "stylesheet" type="text/css" href=" css/bootstrap.min.css"/>
-    <link rel=" stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=[device-width], initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><b>Percorrer</b></title>
 </head>
 <body>
@@ -32,50 +32,61 @@
                   
               </div>
             </div>
-          </nav>
+        </nav>
     </header>
+    
     <div class="container mt-5">
         <h2>Formulário de Treinamento</h2>
         <form id="trainingForm">
             <div class="form-group">
-                <label for="day">Dia da Semana</label>
-                <input type="date" class="form-control" id="day" name="day[]" required>
+                <form id="trainingForm">
+                    <div class="form-group">
+                        <label for="day">Dia da Semana</label>
+                        <input type="date" class="form-control" id="day" name="day[]" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="method">Aluno</label>
+                        <input type="text" class="form-control" id="aluno" name="aluno[]" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="preWorkout">Pré Treino</label>
+                        <input type="text" class="form-control" id="preWorkout" name="preWorkout[]" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="distance">Distância</label>
+                        <input type="text" class="form-control" id="distance" name="distance[]" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="method">Método</label>
+                        <input type="text" class="form-control" id="method" name="method[]" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="speed">Velocidade</label>
+                        <input type="text" class="form-control" id="speed" name="speed[]" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Tempo</label>
+                        <input type="text" class="form-control" id="time" name="time[]" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pace">Ritmo Min/km</label>
+                        <input type="text" class="form-control" id="pace" name="pace[]" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="observations">Observações</label>
+                        <textarea class="form-control" id="observations" name="observations" rows="2"></textarea>
+                    </div>
+                    
+                    <hr>
+                </form>
+                
             </div>
-            <div class="form-group">
-                <label for="method">Aluno</label>
-                <input type="text" class="form-control" id="aluno" name="aluno[]" required>
+                
             </div>
-            <div class="form-group">
-                <label for="preWorkout">Pré Treino</label>
-                <input type="text" class="form-control" id="preWorkout" name="preWorkout[]" required>
-            </div>
-            <div class="form-group">
-                <label for="distance">Distância</label>
-                <input type="text" class="form-control" id="distance" name="distance[]" required>
-            </div>
-            <div class="form-group">
-                <label for="method">Método</label>
-                <input type="text" class="form-control" id="method" name="method[]" required>
-            </div>
-            <div class="form-group">
-                <label for="speed">Velocidade</label>
-                <input type="text" class="form-control" id="speed" name="speed[]" required>
-            </div>
-            <div class="form-group">
-                <label for="time">Tempo</label>
-                <input type="text" class="form-control" id="time" name="time[]" required>
-            </div>
-            <div class="form-group">
-                <label for="pace">Ritmo Min/km</label>
-                <input type="text" class="form-control" id="pace" name="pace[]" required>
-            </div>
-            <div class="form-group">
-                <label for="observations">Observações</label>
-                <textarea class="form-control" id="observations" name="observations" rows="2"></textarea>
-            </div>
-            
-            <hr>
         </form>
+    </div>
+
+    <div class="container mt-3">
         <button type="button" class="btn btn-primary" id="addDay">Adicionar Dia</button>
         <button type="button" class="btn btn-success" id="submitForm">Enviar</button>
     </div>
@@ -86,7 +97,6 @@
             const form = document.getElementById('trainingForm');
             const clonedForm = form.cloneNode(true);
 
-            
             const inputs = clonedForm.querySelectorAll('input');
             inputs.forEach(input => input.value = '');
 
@@ -106,10 +116,8 @@
                 formData.push(data);
             });
 
-         
             console.log(formData);
         });
     </script>
-    </body>
-    </html>
-
+</body>
+</html>
