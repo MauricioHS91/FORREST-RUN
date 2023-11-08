@@ -1,3 +1,9 @@
+// COMANDO ABAIXO VAI APAGAR O BANCO
+// DROP DATABASE  IF EXISTS  forrest; 
+
+create database forrest character set utf8mb4 collate utf8mb4_bin;
+
+use forrest;
 
 CREATE TABLE Sexo (
                 IdSexo TINYINT NOT NULL,
@@ -29,9 +35,9 @@ CREATE TABLE Aluno (
                 IdAluno SMALLINT AUTO_INCREMENT NOT NULL,
                 IdUsuario SMALLINT NOT NULL,
                 Nome VARCHAR(100) NOT NULL,
-                Objetivo VARCHAR,
-                Altura NUMERIC(3,2),
-                Peso NUMERIC(5,2),
+                Objetivo VARCHAR(255) null,
+                Altura NUMERIC(3,2) NOT NULL,	
+                Peso NUMERIC(5,2) NOT NULL,
                 PRIMARY KEY (IdAluno)
 );
 
@@ -41,13 +47,13 @@ CREATE TABLE Treinos (
                 IdAluno SMALLINT NOT NULL,
                 IdTreinadr SMALLINT NOT NULL,
                 DataTreino DATE NOT NULL,
-                PreTreino VARCHAR NOT NULL,
+                PreTreino VARCHAR(255) NOT NULL,
                 Distancia NUMERIC(5,3) NOT NULL,
-                Metodo VARCHAR NOT NULL,
+                Metodo VARCHAR(255) NOT NULL,
                 Velocidade NUMERIC(4,2) NOT NULL,
                 Tempo TIME NOT NULL,
                 Ritmo NUMERIC(4,2) NOT NULL,
-                Observacao VARCHAR NOT NULL,
+                Observacao VARCHAR(255) NOT NULL,
                 PRIMARY KEY (IdTreino)
 );
 
